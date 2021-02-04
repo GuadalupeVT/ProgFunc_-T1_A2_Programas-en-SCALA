@@ -10,18 +10,23 @@
 import scala.math._
 
 object PruebaFunciones {
-  var res=0.0
+  var res=0.0000
   
   def raizCuadrada(x:Double, y:Double): Unit ={
     var cuociente = x/y
     var promedio= (cuociente+y)/2
     
     var estimacion=promedio*promedio
-    var dif=x-estimacion
-    if(estimacion<0.0001)
+    var dif=estimacion-x
+    if(dif<0.0001)
       res=promedio
     else
       raizCuadrada(x,promedio) 
+  }
+  
+  def main(args: Array[String]): Unit = {
+    raizCuadrada(2,1)
+    println("La raiz cuadrada es :"+res)
   }
   
 }
